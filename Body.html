@@ -1,0 +1,196 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>lie~wrapt</TITLE>
+
+<link rel="stylesheet" href="CSS_scripts/MainCSS.css" type="text/css">
+
+<script language="javascript" src="CSS_scripts/Mainscript.js"></script>
+
+</HEAD>
+<BODY>
+
+<DIV class="copyrights_webmaster">
+<FONT class="text">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Copyright: lie~wrapt,© 2000 <BR>
+Webmaster: <A HREF="mailto:pheageygrean@Hotmail.com" Target="_new">Pheagey Grean</A>, 2000
+</FONT>
+</DIV>
+
+<DIV class="extratext">
+<FONT class="text">Click on the words on the ring <BR>
+to explore the site as it stands.</FONT>
+</DIV>
+
+<DIV class="MainBackgroundImg">
+<IMG SRC="BlackBackground.gif">
+</DIV>
+
+<DIV CLASS="BodyBKG">
+<IMG SRC="Menupics/MainBKG.gif">
+</DIV>
+
+
+
+<!--Z-index 1&2_bkg and main 4 imgs-->
+
+<!--MainBodyArea-->
+<DIV CLASS="MainLieBodyDiv">
+<IFRAME SRC="IntroBody.html" NAME="MainLie" MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER="No" ALIGN="middle" WIDTH="360" HEIGHT="260" scrolling="no"></IFRAME>
+</DIV>
+
+<!--MainMenu Off-->
+<DIV CLASS="MenuOff">
+<A onMouseOver="showIt(Menu), hideIt(Music), hideIt(Members), hideIt(News)">
+<IMG SRC="Menupics/MenuOff.gif" BORDER=0>
+</A><BR></DIV>
+<!--MainMenu On-->
+<DIV CLASS="MenuOn" ID="Menu">
+<A onMouseOut="hideIt(Menu)" onClick="javascript:window.open('IntroBody.html','MainLie','scrolling=no,resizable=no')" TARGET="MainLie">
+<IMG SRC="Menupics/MenuOn.gif" BORDER=0></A>
+<BR></DIV>
+
+<!--News Off-->
+<DIV CLASS="NewsOff">
+<A onMouseOver="showIt(News), hideIt(Music), hideIt(Members), hideIt(Menu)">
+<IMG SRC="Menupics/NewsOff.gif" BORDER=0>
+</A><BR></DIV>
+
+<!--News On-->
+<DIV CLASS="NewsOn" ID="News">
+<A onMouseOut="hideIt(News)" onClick="showIt(NewsSubMenu)">
+<IMG SRC="Menupics/NewsOn.gif" BORDER=0>
+</A><BR></DIV>
+
+
+<!--Members Off-->
+<DIV CLASS="MemerbsOff">
+<A onMouseOver="showIt(Members), hideIt(Music), hideIt(Menu), hideIt(News)">
+<IMG SRC="Menupics/MembersOff.gif" BORDER=0>
+</A><BR></DIV>
+<!--Members On-->
+<DIV CLASS="MemerbsOn" ID="Members">
+<A onMouseOut="hideIt(Members)" onClick="showIt(MembersSubMenu)">
+<IMG SRC="Menupics/MembersOn.gif" BORDER=0>
+</A><BR></DIV>
+
+
+<!--Music Off-->
+<DIV CLASS="MusicOff">
+<A onMouseOver="showIt(Music), hideIt(Menu), hideIt(Members), hideIt(News)">
+<IMG SRC="Menupics/MusicOff.gif" BORDER=0>
+</A><BR></DIV>
+<!--Music On-->
+<DIV CLASS="MusicOn" ID="Music">
+<A onMouseOut="hideIt(Music)" onClick="showIt(MusicSubMenu)">
+<IMG SRC="Menupics/MusicOn.gif" BORDER=0>
+</A><BR></DIV>
+<!--end main 4-->
+
+<!--start submenus-->
+
+<!--NewsSubMenu-->
+<DIV CLASS="NewsSubMenu" ID="NewsSubMenu">
+<DIV onMouseout="hideIt(NewsSubMenu)">
+<IMG SRC="Menupics/NewsSubMenu.gif" BORDER=0 WIDTH=110 HEIGHT=56 USEMAP="#NewsSubMenuMap">
+<MAP NAME="NewsSubMenuMap">
+  <AREA SHAPE="RECT" COORDS="0,0,110,28"
+  onMouseover="showIt(NewsSubMenu)"
+  onClick="javascript:CurrentNews()">
+  <AREA SHAPE="RECT" COORDS="0,27,110,56"
+  onMouseover="showIt(NewsSubMenu)"
+  onClick="javascript:ArchivedNews()">
+</MAP>
+</DIV>
+</DIV>
+<SCRIPT>
+function CurrentNews()
+	{	
+		window.open('News/CurrentNews.html','MainLie','scrolling=no,resizable=no')
+		hideIt(NewsSubMenu)
+		showIt(MenuOff)
+	}
+function ArchivedNews()
+	{	
+		window.open('News/ArchivedNews.html','MainLie','scrolling=no,resizable=no')
+		hideIt(NewsSubMenu)
+	}
+</SCRIPT>
+<!--endNewsSubMenu-->
+
+<!--MembersSubMenu--->
+<DIV CLASS="MembersSubMenu" ID="MembersSubMenu" onClick="hideIt(MembersSubMenu)">
+<DIV onMouseout="hideIt(MembersSubMenu)">
+<IMG SRC="Menupics/MembersSubMenu.gif" BORDER=0 WIDTH=195 HEIGHT=63 USEMAP="#MembersSubMenuMap">
+<MAP NAME="MembersSubMenuMap">
+  <AREA SHAPE="RECT" COORDS="0,0,75,32" 
+  onMouseover="showIt(MembersSubMenu)"
+  onClick="javascript:Bios()">
+  <AREA SHAPE="RECT" COORDS="74,0,195,32" 
+  onMouseover="showIt(MembersSubMenu)"
+  onClick="javascript:Styles()">
+  <AREA SHAPE="RECT" COORDS="0,31,195,63"
+  onMouseover="showIt(MembersSubMenu)"
+  onClick="javascript:Opinions()">
+</MAP>
+</DIV>
+</DIV>
+<SCRIPT>
+function Bios()
+	{	
+		window.open('Members/Bios.html','MainLie','scrolling=no,resizable=no')
+		hideIt(MembersSubMenu)
+	}
+function Styles()
+	{	
+		window.open('Members/Styles.html','MainLie','scrolling=no,resizable=no')
+		hideIt(MembersSubMenu)
+	}
+function Opinions()
+	{	
+		window.open('Members/Opinoins.html','MainLie','scrolling=no,resizable=no')
+		hideIt(MembersSubMenu)
+	}
+</SCRIPT>
+<!--endMembersSubMenu-->
+
+<!--MusicSubMenu-->
+<DIV CLASS="MusicSubMenu" ID="MusicSubMenu" >
+<DIV onMouseout="hideIt(MusicSubMenu)">
+<IMG SRC="Menupics/MusicSubMenu.gif" BORDER=0 WIDTH=157 HEIGHT=98 USEMAP="#MusicSubMenuMap">
+<MAP NAME="MusicSubMenuMap">
+  <AREA SHAPE="RECT" COORDS="10,10,110,34"
+  onMouseover="showIt(MusicSubMenu)"
+  onClick="javascript:Styles2()">
+  <AREA SHAPE="RECT" COORDS="18,34,146,61" 
+  onMouseover="showIt(MusicSubMenu)"
+  onClick="javascript:Lyrics_Tabs()">
+  <AREA SHAPE="RECT" COORDS="11,59,146,87"
+  onMouseover="showIt(MusicSubMenu)" 
+  onClick="javascript:Downloads()">
+</MAP>
+</DIV>
+</DIV>
+<SCRIPT>
+function Styles2()
+	{	
+		window.open('Music/Style.html','MainLie','scrolling=no,resizable=no')
+		hideIt(MusicSubMenu)
+	}
+function Lyrics_Tabs()
+	{	
+		window.open('Music/Lyric_Tabs.html','MainLie','scrolling=no,resizable=no')
+		hideIt(MusicSubMenu)
+	}
+function Downloads()
+	{	
+		window.open('Music/Downloads.html','MainLie','scrolling=no,resizable=no')
+		hideIt(MusicSubMenu)
+	}
+</SCRIPT>
+<!--endMusicsubmenbu-->
+
+<!--main 4 img overs+sub-menus-->
+<SCRIPT LANGUAGE="Javascript" SRC="CSS_scripts/imgover.js"></SCRIPT>
+</BODY>
+</HTML>
